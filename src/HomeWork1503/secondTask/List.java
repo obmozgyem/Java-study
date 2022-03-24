@@ -1,1 +1,0 @@
-package HomeWork1503.secondTask;import java.util.ArrayList;public class List {//      List<> person = new ArrayList<>();//      list.add("Ivan");}

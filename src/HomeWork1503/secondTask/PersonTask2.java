@@ -7,26 +7,27 @@ package HomeWork1503.secondTask;
 //        с таким именем(либо null,если человека с таким именем нет в списке).
 //        После этого вызвать у получившегося объекта метод toString().
 
-import java.util.ArrayList;
-import java.util.List;
+public class PersonTask2 {
+    private String name;
+    private int index;
 
-public class Person {
-    String name;
-
-    public Person(String name) {
+    public PersonTask2(String name, int index) {
         this.name = name;
+        this.index = index;
     }
-//
-//    String person1 = new Person("Ivan");
-//
-//
-//
-//    public class second {
-//        List<Person> persons = new ArrayList<>();
 
-
-
-
+    public String getName() {
+        return name;
     }
+
+    public int getIndex() {
+        return index;
+    }
+
+    @Override
+    public String toString() {
+        return name + ": " + "index: "+ index;
+    }
+}
 
 
