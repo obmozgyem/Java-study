@@ -1,4 +1,4 @@
-package HomeWork1503.firstTask;
+package HomeWork1503.Task1;
 
 public class Fish extends Pet {
     public Fish(String name) {

@@ -1,6 +1,5 @@
-package HomeWork1503.secondTask;
+package HomeWork1503.Task2;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SecondTask {

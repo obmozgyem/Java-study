@@ -1,4 +1,4 @@
-package HomeWork1503.secondTask;
+package HomeWork1503.Task2;
 
 //Создать класс Person с полем String name.
 //        В другом классе создать поле List<Person> persons.
