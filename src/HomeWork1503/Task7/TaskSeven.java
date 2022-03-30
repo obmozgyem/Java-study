@@ -14,27 +14,22 @@ public class TaskSeven {
     public static final String SYMBOLS = ",.!?#:";
 
     public static void main(String[] args) {
-        // спросить насчёт третьей
+
 
         String stroka = "!!Leading,, and## Trailing:: Spaces;;";
 
         String strokaUpper = stroka.toUpperCase();
 
         System.out.println(strokaUpper);
-//       strokaUpper = strokaUpper.replace("(?:!#:;)", "*");
 
-       String strokaUpper2 =  strokaUpper.replaceAll("!", "*");
-        String strokaUpper3 = strokaUpper2.replaceAll("#", "*");
-        String strokaUpper4 = strokaUpper3.replaceAll(";", "*");
-        String strokaUpper5 = strokaUpper4.replaceAll(":", "*");
-        String strokaUpper6 = strokaUpper5.replaceAll(",", "*");
-        System.out.println(strokaUpper6);
+        String strokaUpper2 = strokaUpper.replaceAll("[#!,.;:$]", "*");
 
+        System.out.println(strokaUpper2);
 
 
         Map<Character, Integer> map = new HashMap<>();
 
-        for (char key : strokaUpper6.toCharArray()) {
+        for (char key : strokaUpper2.toCharArray()) {
             if (!map.containsKey(key))
                 map.put(key, 1);
             else

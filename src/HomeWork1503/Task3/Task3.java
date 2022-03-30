@@ -13,43 +13,24 @@ import static java.util.Collections.sort;
  */
 public class Task3 {
 
-
-    @Override
-    public String toString() {
-        return "Task3{}";
-    }
-
     public static void main(String[] args) {
 
-        List<StringBuilder> list2 = new ArrayList<>();
-        list2.add(new StringBuilder("aaa"));
-        list2.add(new StringBuilder("bbb"));
-        list2.add(new StringBuilder("qwerty"));
-        list2.add(new StringBuilder("."));
-        list2.add(new StringBuilder("abcde"));
-        list2.add(new StringBuilder("ccc"));
-        list2.add(new StringBuilder("abcdef"));
-        list2.add(new StringBuilder("++"));
-//        StringBuilder sb = new StringBuilder();
-        for (StringBuilder s : list2) {
-            if (s.length() < 5) {
-//                s.append(s + " ");
+        List<String> list2 = new ArrayList<>();
+        list2.add("aaa");
+        list2.add("bbb");
+        list2.add("qwerty");
+        list2.add(".");
+        list2.add("abcde");
+        list2.add("ccc");
+        list2.add("abcdef");
+        list2.add("++");
+        StringBuilder sb = new StringBuilder();
+        for (String s : list2) { // мы "проходимся" по строкам коллекции
+            if (s.length() < 5) {   // проверили длину элемента
+                sb.append(s + " ");  // если <5, то записываем в стрингбилдер плюс пробел
                 System.out.print(s + " ");
-
             }
-//            System.out.println(s);
         }
-
-
-//        for (int i = 0; i < list2.size(); i++) {
-//            System.out.print(+ " ");
-//
-//            if (list2.size() < 5) {
-//                ;
-//            }
-//        }
-
-
 //
 //        StringBuilder sb1 = new StringBuilder("aaa");
 //        StringBuilder sb2 = new StringBuilder("bbb");

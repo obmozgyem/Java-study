@@ -16,28 +16,60 @@ public class TaskFiveStart {
     */
 
     public static void main(String[] args) {
+        List<String> buyList1 = new ArrayList<>();
+        buyList1.add("meat");
+        buyList1.add("milk");
+        buyList1.add("salt");
+        buyList1.add("bread");
 
-        String meat = "meat";
-        String milk = "milk";
-        String solt = "solt";
-        String butter = "butter";
-        String bread = "bread";
+        List<String> buylist2 = new ArrayList<>();
+        buylist2.add("meat");
+        buylist2.add("salt");
+        buylist2.add("butter");
+        buylist2.add("bread");
 
-        List<String> buyList = new ArrayList<>();
-        buyList.add(meat);
-        buyList.add(milk);
-        buyList.add(solt);
-        buyList.add(butter);
-        buyList.add(bread);
-        System.out.println(buyList);
+        List<String> buylist3 = new ArrayList<>();
+        buylist3.add("meat");
+        buylist3.add("milk");
+        buylist3.add("water");
+        buylist3.add("bread");
 
+        List<String> buylist4 = new ArrayList<>();
+        buyList1.add("meat");
+        buyList1.add("milk");
+        buyList1.add("salt");
+        buyList1.add("beer");
 
+        Entity entity1 = new Entity("Pavel");
+        Entity entity2 = new Entity("Ivan");
+        Entity entity3 = new Entity("Fedor");
+        Entity entity4 = new Entity("Igor");
 
         Map<Entity, List<String>> entityMap = new HashMap<Entity, List<String>>();
-//        entityMap.put("Vasily", buyList);
-//
-//              entityMap.put(("Vasily") : new ArrayList<>(){{add.("milk”); add("bread"");}});
+        entityMap.put(entity1, buyList1);
+        entityMap.put(entity2, buylist2);
+        entityMap.put(entity3, buylist3);
+        entityMap.put(entity4, buylist4);
+
+        Map<String , Integer> count = new HashMap<>();
+
+        for (List<String> lt:  entityMap.values() ) {
+            for (String st : lt) {
+                if (!count.containsKey(st)) {
+                    count.put(st, 1);
+                } else {
+                    count.put(st, count.get(st) + 1);
+                }
+            }
+        }
+            System.out.println();
+            count.forEach((k,v) -> System.out.printf("[%s] : %d\n", k, v));
+
+
+
+
+        }
 
 
     }
-}
+
