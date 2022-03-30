@@ -51,25 +51,24 @@ public class TaskFiveStart {
         entityMap.put(entity3, buylist3);
         entityMap.put(entity4, buylist4);
 
-        Map<String , Integer> count = new HashMap<>();
+        Map<String, Integer> count = new HashMap<>(); // мы создали новую мапу
 
-        for (List<String> lt:  entityMap.values() ) {
-            for (String st : lt) {
-                if (!count.containsKey(st)) {
+
+        for (List<String> lt : entityMap.values()) {  // теперь заполняем её итерацией по значениям values из мапы entityMap + записываем новый список List lt
+            for (String st : lt) {                    //делаем новый цикл и итерируемся уже по записанному значению мапы count с записью  в (String St)
+                if (!count.containsKey(st)) {         //если containsKey false то мы записываем покупку(String St) в ключ и 1 в значение count.values
                     count.put(st, 1);
-                } else {
-                    count.put(st, count.get(st) + 1);
-                }
+                } else {                              //иначе мы записываем покупку в ту же ячейку, где есть совпадение ключа
+                    count.put(st, count.get(st) + 1); //записываем ключ, а потом вызываем уже записанное значение ключа  и прибавляем к нему единицу
+                }                                     //цикл завершается
             }
         }
-            System.out.println();
-            count.forEach((k,v) -> System.out.printf("[%s] : %d\n", k, v));
-
-
-
-
-        }
+        System.out.println();
+        count.forEach((k, v) -> System.out.printf("[%s] : %d\n", k, v));
 
 
     }
+
+
+}
 

@@ -26,7 +26,7 @@ public class Task3 {
         list2.add("++");
         StringBuilder sb = new StringBuilder();
         for (String s : list2) { // мы "проходимся" по строкам коллекции
-            if (s.length() < 5) {   // проверили длину элемента
+            if (s.length() < 5) {   // проверили длину элемента списка
                 sb.append(s + " ");  // если <5, то записываем в стрингбилдер плюс пробел
                 System.out.print(s + " ");
             }
