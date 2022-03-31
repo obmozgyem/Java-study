@@ -11,18 +11,17 @@ public class Taskfirst {
 
     public static void main(String[] args) {
 
-
         Square square1 = new Square(1.0);
         square1.areaCalculation();
         square1.perimeterCalculation();
         System.out.println();
 
-        Rectangle rectangle1 = new Rectangle(2, 3);
+        Rectangle rectangle1 = new Rectangle(2, 1);
         rectangle1.areaCalculation();
         rectangle1.perimeterCalculation();
         System.out.println();
 
-        Circle circle1 = new Circle(4);
+        Circle circle1 = new Circle(1);
         circle1.areaCalculation();
         circle1.perimeterCalculation();
 

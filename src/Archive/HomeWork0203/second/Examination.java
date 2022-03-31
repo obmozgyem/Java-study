@@ -12,6 +12,7 @@ public class Examination {
         int StartY = 0;
 
         Player player1 = new Player(100, 50);
+
         System.out.println("Новые координаты Х= " + player1.getPlayerMoveX());
         System.out.println("Новые координаты Y= " + player1.getPlayerMoveY());
         System.out.println(player1.toString());

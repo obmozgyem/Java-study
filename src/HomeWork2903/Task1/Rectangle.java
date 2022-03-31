@@ -12,12 +12,23 @@ public class Rectangle extends Square {
 
     @Override
     public void areaCalculation() {
+        if (this.getWidth() < 0 || this.getLength() < 0) {
+            System.out.println("Check value");
+        }
+        else
+
         System.out.println("Square Rectangle = " + this.getWidth() * this.getLength());
         return;
     }
 
     @Override
     public void perimeterCalculation() {
+
+        if (this.getWidth() < 0 || this.getLength() < 0) {
+            System.out.println("Check value");
+        }
+        else
+
         System.out.println("Perimeter Rectangle  = " + (this.getLength()*2  + this.getWidth()*2));
         return;
     }

@@ -9,13 +9,22 @@ public class Square implements CalculationUtils {
 
     public void areaCalculation() {
 
-        System.out.println("Square Area  = " + this.length * this.length);
+        if (this.getLength() < 0) {
+            System.out.println("Check value");
+        } else
+
+
+            System.out.println("Square Area  = " + this.length * this.length);
         return;
     }
 
     public void perimeterCalculation() {
 
-        System.out.println("Square Perimeter  = " + this.length * 4);
+        if (this.getLength() < 0) {
+            System.out.println("Check value");
+        } else
+
+            System.out.println("Square Perimeter  = " + this.length * 4);
         return;
     }
 
