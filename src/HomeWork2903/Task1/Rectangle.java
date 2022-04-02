@@ -11,26 +11,26 @@ public class Rectangle extends Square {
 
 
     @Override
-    public void areaCalculation() {
-        if (this.getWidth() < 0 || this.getLength() < 0) {
-            System.out.println("Check value");
-        }
-        else
-
-        System.out.println("Square Rectangle = " + this.getWidth() * this.getLength());
-        return;
+    public double areaCalculation() {
+//        if (this.getWidth() < 0 || this.getLength() < 0) {
+//            System.out.println("Check value");
+//        }
+//        else
+//
+//        System.out.println("Square Rectangle = " + this.getWidth() * this.getLength());
+        return this.getWidth() * this.getLength();
     }
 
     @Override
-    public void perimeterCalculation() {
-
-        if (this.getWidth() < 0 || this.getLength() < 0) {
-            System.out.println("Check value");
-        }
-        else
-
-        System.out.println("Perimeter Rectangle  = " + (this.getLength()*2  + this.getWidth()*2));
-        return;
+    public double perimeterCalculation() {
+//
+//        if (this.getWidth() < 0 || this.getLength() < 0) {
+//            System.out.println("Check value");
+//        }
+//        else
+//
+//        System.out.println("Perimeter Rectangle  = " + (this.getLength()*2  + this.getWidth()*2));
+        return this.getLength()*2  + this.getWidth()*2;
     }
 
 
@@ -40,5 +40,10 @@ public class Rectangle extends Square {
 
     public void setWidth(double width) {
         this.width = width;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Rectangle[%.2f,%.2f]", getLength(), getWidth());
     }
 }

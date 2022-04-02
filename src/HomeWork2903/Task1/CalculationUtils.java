@@ -4,17 +4,9 @@ package HomeWork2903.Task1;
 
 interface CalculationUtils {
 
-  static double  areaCalculation() {
-      return 0;
-  }
+    double areaCalculation();
 
-    static double perimeterCalculation() {
-        return 0;
-    }
-
-
-
-
+    double perimeterCalculation();
 
 
 }

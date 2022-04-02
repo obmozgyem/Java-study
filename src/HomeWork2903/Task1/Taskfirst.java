@@ -7,23 +7,48 @@ package HomeWork2903.Task1;
 принимающие любую фигуру и возвращающие ее а) площадь б) периметр.
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Taskfirst {
 
     public static void main(String[] args) {
 
-        Square square1 = new Square(1.0);
-        square1.areaCalculation();
-        square1.perimeterCalculation();
-        System.out.println();
+        double area;
+        double perimeter;
 
-        Rectangle rectangle1 = new Rectangle(2, 1);
-        rectangle1.areaCalculation();
-        rectangle1.perimeterCalculation();
-        System.out.println();
 
-        Circle circle1 = new Circle(1);
-        circle1.areaCalculation();
-        circle1.perimeterCalculation();
+        List<CalculationUtils> calculationUtils = new ArrayList<>();
+        calculationUtils.add(new Square(1));
+        calculationUtils.add(new Rectangle(2, 4));
+        calculationUtils.add(new Circle(10));
+
+
+        for (CalculationUtils calculationUtils1 : calculationUtils) {
+            area = calculationUtils1.areaCalculation();
+            perimeter = calculationUtils1.perimeterCalculation();
+
+
+            System.out.printf("%s, area = %.2f, perimeter = %.2f\n", calculationUtils, area, perimeter);
+        }
+
+
+// Square square1 = new Square(1.0);
+//        Rectangle rectangle1 = new Rectangle(2, 1);
+//        Circle circle1 = new Circle(1);
+//
+//        square1.areaCalculation();
+//        square1.perimeterCalculation();
+//        System.out.println();
+//
+//
+//        rectangle1.areaCalculation();
+//        rectangle1.perimeterCalculation();
+//        System.out.println();
+//
+//
+//        circle1.areaCalculation();
+//        circle1.perimeterCalculation();
 
 
     }

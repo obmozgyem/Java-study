@@ -7,25 +7,24 @@ public class Square implements CalculationUtils {
         this.length = length;
     }
 
-    public void areaCalculation() {
+    public double areaCalculation() {
+//
+//        if (this.getLength() < 0) {
+//            System.out.println("Check value");
+//        } else
+//
 
-        if (this.getLength() < 0) {
-            System.out.println("Check value");
-        } else
-
-
-            System.out.println("Square Area  = " + this.length * this.length);
-        return;
+        return this.length * this.length;
     }
 
-    public void perimeterCalculation() {
-
-        if (this.getLength() < 0) {
-            System.out.println("Check value");
-        } else
-
-            System.out.println("Square Perimeter  = " + this.length * 4);
-        return;
+    public double perimeterCalculation() {
+//
+//        if (this.getLength() < 0) {
+//            System.out.println("Check value");
+//        } else
+//
+//            System.out.println("Square Perimeter  = " + this.length * 4);
+        return this.length * 4;
     }
 
 
@@ -36,5 +35,11 @@ public class Square implements CalculationUtils {
     public void setLength(double length) {
         this.length = length;
     }
-}
 
+    @Override
+    public String toString() {
+        return String.format("Square[%.2f]", length);
+
+    }
+
+}

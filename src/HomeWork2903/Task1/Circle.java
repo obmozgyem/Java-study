@@ -5,22 +5,22 @@ public class Circle implements CalculationUtils {
 
     private double radius;
 
-    public void areaCalculation() {
-        if (radius < 0) {
-            System.out.println("Check value");
-        }
-        else
-        System.out.println("Square Circle = " + Math.PI* (radius*radius));
-        return;
+    public double areaCalculation() {
+//        if (radius < 0) {
+//            System.out.println("Check value");
+//        }
+//        else
+//        System.out.println("Square Circle = " + Math.PI* (radius*radius));
+        return Math.PI* (radius*radius);
     }
 
-   public void perimeterCalculation() {
-       if (radius < 0) {
-           System.out.println("Check value ");
-       }
-       else
-        System.out.println("Perimeter Circle = " + Math.PI* (radius*2));
-        return;
+   public double perimeterCalculation() {
+//       if (radius < 0) {
+//           System.out.println("Check value ");
+//       }
+//       else
+//        System.out.println("Perimeter Circle = " + Math.PI* (radius*2));
+        return Math.PI* (radius*2);
     }
 
 
@@ -37,4 +37,12 @@ public class Circle implements CalculationUtils {
     public void setRadius(double radius) {
         this.radius = radius;
     }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
+    }
+
 }

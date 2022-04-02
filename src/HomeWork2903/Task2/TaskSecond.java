@@ -12,13 +12,26 @@ package HomeWork2903.Task2;
  */
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TaskSecond {
     public static void main(String[] args) {
-        Author author1 = new Author("Dmitry", "Peskov",14);
-        Book book1 = new Book("Mapa",150, author1, "A4");
-        System.out.println(book1.toString());
-        System.out.println();
-        System.out.println(author1.getAge());
+        Authors author1 = new Authors("Dmitry", "Peskov", 14);
+        Book book1 = new Book("Mapa", 150, author1, "A4");
+
+
+        List<Book> library = new ArrayList<>();
+        library.add(new Book("Hello Java", 100, new Authors("Egor", "Pavlov", 30), "A5"));
+        library.add(new Book("Dream", 10, new Authors("Igor", "Petrov", 10), "A3"));
+        library.add(new Book("Life", 150, new Authors("Misha", "Ivanov", 20), "A4"));
+        library.add(new Book("Time for fight", 500, new Authors("Egor", "Pavlov", 40), "A2"));
+
+
+        for (Book lab : library) {
+            System.out.println(lab);
+        }
+
 
 
 
