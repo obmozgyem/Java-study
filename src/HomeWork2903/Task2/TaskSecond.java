@@ -40,7 +40,7 @@ public class TaskSecond {
         while (iterator.hasNext()) {
             Authors searh = iterator.next();
             if (iterator.equals(author1)) {
-                iterator.getSurname();
+                searh.add(getname);
                 System.out.println(searh);
 
             }

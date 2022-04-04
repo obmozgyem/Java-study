@@ -9,12 +9,13 @@ import java.util.List;
 public class CardFile {
 
     public Authors findBook(String name, List library2) {
-        for (Authors author : library2) {
-            if (author.getName().equals(name))
-                return author;
+        for (Authors author2 : library2) {
+            if (author2.getName().equals(name))
+                return author2;
         }
-    }
         return null;
+    }
+
 }
 
 
