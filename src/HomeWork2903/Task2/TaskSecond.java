@@ -13,6 +13,7 @@ package HomeWork2903.Task2;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class TaskSecond {
@@ -20,19 +21,32 @@ public class TaskSecond {
         Authors author1 = new Authors("Dmitry", "Peskov", 14);
         Book book1 = new Book("Mapa", 150, author1, "A4");
 
+        List<Authors> library2 = new ArrayList<>();
+  //      library2.add(new Authors());
+        library2.add(new Authors("Igor", "Petrov", 30));
+        library2.add(new Authors("Petr", "Pavlov", 30));
+        library2.add(new Authors("Igor", "Pavlov", 40));
+        library2.add(new Authors("Igor", "Ivanov", 40));
 
         List<Book> library = new ArrayList<>();
         library.add(new Book("Hello Java", 100, new Authors("Egor", "Pavlov", 30), "A5"));
         library.add(new Book("Dream", 10, new Authors("Igor", "Petrov", 10), "A3"));
         library.add(new Book("Life", 150, new Authors("Misha", "Ivanov", 20), "A4"));
         library.add(new Book("Time for fight", 500, new Authors("Egor", "Pavlov", 40), "A2"));
+        List<Authors> library3 = new ArrayList<>();
+
+        library.iterator().forEachRemaining(System.out::println);
+        Iterator<Authors> iterator = library2.iterator();
+        while (iterator.hasNext()) {
+            Authors searh = iterator.next();
+            if (iterator.equals(author1)) {
+                iterator.getSurname();
+                System.out.println(searh);
+
+            }
 
 
-        for (Book lab : library) {
-            System.out.println(lab);
         }
-
-
 
 
     }

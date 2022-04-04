@@ -1,10 +1,16 @@
 package HomeWork2903.Task2;
 
+import java.util.Objects;
+
 //Автор – тоже класс, содержит имя, фамилию, возраст.
 public class Authors {
-    private String name;
+    public static String name;
     private String surname;
     private int age;
+
+    public Authors() {
+
+    }
 
     public Authors(String name, String surname, int age) {
         this.name = name;
@@ -12,7 +18,7 @@ public class Authors {
         this.age = age;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
@@ -51,6 +57,18 @@ public class Authors {
                 ", surname= " + surname +
                 ", age=" + age +
                 ']';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        Authors authors = (Authors) o;
+        return Objects.equals(name, authors.name) && Objects.equals(surname, authors.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname);
     }
 }
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PersonList {
 
-    private List<PersonTask2> list = new ArrayList<>();
+    public List<PersonTask2> list = new ArrayList<>();
 
     public void addPerson(PersonTask2 person) {
         this.list.add(person);
