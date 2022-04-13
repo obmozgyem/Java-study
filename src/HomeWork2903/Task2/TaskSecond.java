@@ -35,19 +35,19 @@ public class TaskSecond {
         library.add(new Book("Time for fight", 500, new Authors("Egor", "Pavlov", 40), "A2"));
         List<Authors> library3 = new ArrayList<>();
 
-        library.iterator().forEachRemaining(System.out::println);
-        Iterator<Authors> iterator = library2.iterator();
-        while (iterator.hasNext()) {
-            Authors searh = iterator.next();
-            if (iterator.equals(author1)) {
-                searh.add(getname);
-                System.out.println(searh);
-
-            }
+//        library.iterator().forEachRemaining(System.out::println);
+//        Iterator<Authors> iterator = library2.iterator();
+//        while (iterator.hasNext()) {
+//            Authors searh = iterator.next();
+//            if (iterator.equals(author1)) {
+//                searh.add(getname);
+//                System.out.println(searh);
+//
+//            }
 
 
         }
 
 
     }
-}
+

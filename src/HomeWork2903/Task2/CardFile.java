@@ -8,13 +8,13 @@ import java.util.List;
         */
 public class CardFile {
 
-    public Authors findBook(String name, List library2) {
-        for (Authors author2 : library2) {
-            if (author2.getName().equals(name))
-                return author2;
-        }
-        return null;
-    }
+//    public Authors findBook(String name, List library2) {
+//        for (Authors author2 : library2) {
+//            if (author2.getName().equals(name))
+//                return author2;
+//        }
+//        return null;
+//    }
 
 }
 
