@@ -1,29 +1,42 @@
 package Archive;
 
+/**
+ Я так решил:
+ 1. создал обьект сканера(как обычно)
+ 2. создал переменную стринг в которую записал первую букву командой next()
+ 3. создал вторую переменную стринг в которую записал вторую букву командой next()
+ 4. создал переменную int в которую записал номер первой буквы так bukva1.charAt(0);
+ 5. аналогично для второй буквы  записал номер второй буквы так bukva2.charAt(0);
+ 6. Делаем цикл ваил, условие: (объкет класса сканер.hasNext) {
+ 7. в цикле создал стринг переменную  в которую записываю сканером командой next() следующее слово из строки
+ 8. ну и сама суть задачи, в этом же цикле ваил создаю условие if в котором пишу:
+ ((стринг Переменная из 7 пункта.charAt(0) > = переменной из 4 пункта) & ((стринг  Переменная из 7 пункта.charAt(0)
+ <= переменной из 5 пункта)))
+ 9. Если это условие соблядино то sout стринг переменную из 7 пункта.
+ 10. закрываем условие if }  и закрываем условие ваил }
+ Прошло все тесты с 1 раза..
+ */
 
-//import java.util.*;
-//
-//class MyNumber {
-//    public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        int x = sc.nextInt();
-//
-//        List<Integer> list = new ArrayList<>();
-//        list.add(x);
-//        List<Integer> listq = new ArrayList<>();
-//
-//        Comparator<Integer> tComparator = Collections.reverseOrder(list);
-//        System.out.println(tComparator);
-//
-//        for (Integer integer : list) {
-//            System.out.print(integer);
-//
-//        }
-//
-//
-//
-//    }
-//}
+
+import java.util.*;
+
+class MyNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String firstLetter = sc.nextLine();
+        String secondLetter = sc.nextLine();
+        int l1 = firstLetter.charAt(0);
+        int l2 = secondLetter.charAt(0);
+        while (sc.hasNext()) {
+            String words = sc.next();
+            if(words.charAt(0) >= l1 && words.charAt(0) <= l2) {
+                System.out.println(words);
+                            } }
+        }
+
+
+    }
+
 
 
 
