@@ -30,7 +30,7 @@ public class Task1 {
 
                 switch (inputString) {
                     case "1" -> journalStorageService.readJournalStorage(journalStorage);
-//                    case "1":
+//                   case "1":
 //                        System.out.println("1");
 //                        break;
                     case "2" -> System.out.println("2");

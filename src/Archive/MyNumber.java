@@ -6,15 +6,16 @@ class MyNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        boolean b = true;
 
-        for (int i = 2; i < a; i++) {
-            if (a % i == 0) {
-                b = false;
-                break;
-            }
+        int test[] = new int[a];
+
+        for (int i = 0; i < a; i++) {
+
+            test[i] = sc.nextInt();
+
+
         }
-       System.out.println(b);
+        System.out.print(test[sc.nextInt()]);
     }
 }
 

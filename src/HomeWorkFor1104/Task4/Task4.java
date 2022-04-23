@@ -54,10 +54,5 @@ public class Task4 {
         }
 
 
-
-
-
-
-
     }
 }
