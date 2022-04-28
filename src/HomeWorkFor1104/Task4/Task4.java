@@ -10,49 +10,101 @@ package HomeWorkFor1104.Task4;
  */
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Task4 {
-    public static void main(String[] args) {
-//        File file1 = new File("resources", "balance.dt");
-//        File file2 = new File("resources", "transactions.dt");
-//        HashMap balanceMap = new HashMap<>();
-//        HashMap transactionsMap = new HashMap<>();
-//        List<String> listTransactions = new ArrayList<>();
-//
-//        try (BufferedReader balance = new BufferedReader(new FileReader(file1))) {
-//            String number = balance.readLine();
-//            String[] balanceArray = number.split(" ");
-//
-//            for (int i = 0; i < balanceArray.length; i++) {
-//                balanceMap.put(balanceArray[0], Integer.parseInt(balanceArray[1]));
-//
+    public static void main(String[] args) throws FileNotFoundException {
+                 /*                    //ReadTransactions2
+        Map<String, Integer> balanceMap = ReadBalance.readBalance(); // получил значение c которым можно работать
+        Map<String, Integer> resultBalanceMap = balanceMap;
+        System.out.println(balanceMap.toString());
+        System.out.println(resultBalanceMap.toString());  */
+
+        //ReadTransactions
+        Map<String, Integer> balanceMap = ReadBalance.readBalance(); // получил значение c которым можно работать
+
+        Map<String, Integer> resultBalanceMap = balanceMap;
+        System.out.println(resultBalanceMap.toString());
+        List<List> readTransaction = ReadTransactions.readTransaction();  //keyMap(0)   //valueMoney(2)  //personWhoGetMoney(1)
+        List<String> personWhoGetMoney = readTransaction.get(1);
+        System.out.println(personWhoGetMoney.toString());
+
+        List<String> personWhoTakeHisMoney = readTransaction.get(0);
+
+        List<String> valueMoney = readTransaction.get(2);
+        List<Integer> valueMapInteger = new ArrayList<>();
+        for (String myInt : valueMoney) {
+            valueMapInteger.add(Integer.valueOf(myInt));
+        }
+
+
+
+        for (int i = 0; i < personWhoGetMoney.size(); i++) {
+            if (resultBalanceMap.containsKey(personWhoTakeHisMoney.get(i)) && resultBalanceMap.containsKey(personWhoGetMoney.get(i))) {
+                Integer balance = resultBalanceMap.get(personWhoTakeHisMoney.get(i));
+                Integer transaction = valueMapInteger.get(i);
+                if (balance > transaction) {
+                    resultBalanceMap.put(personWhoTakeHisMoney.get(i), resultBalanceMap.get(personWhoTakeHisMoney.get(i)) - valueMapInteger.get(i));
+                }
+                resultBalanceMap.put(personWhoGetMoney.get(i), resultBalanceMap.get(personWhoGetMoney.get(i)) + valueMapInteger.get(i));
+            }
+        }
+
+        System.out.println(resultBalanceMap.toString());
+        Map<String, Integer> sortedMap = resultBalanceMap.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors
+                        .toMap(Map.Entry::getKey,
+                                Map.Entry::getValue,
+                                (e1, e2) -> e1,
+                                LinkedHashMap::new));
+        System.out.println(sortedMap.toString());
+
+
+
+
+
+        /*      Map<String, Integer> mapTransaction = new HashMap<>();   // если делать мапу транзакции, то перезаписываются она
+                                                                          надо во время чтения сделать
+        for (int i = 0; i < valueMapInteger.size(); i++) {
+            mapTransaction.put(keyMap.get(i), valueMapInteger.get(i) );
+
+        }
+        System.out.println(mapTransaction.size());
+     System.out.println(mapTransaction.toString()); */
+
+
+
+
+//        try {
+//                File file = new File("resources", "balanceResult.dt");
+//                FileOutputStream f = new FileOutputStream(file);
+//                ObjectOutputStream s = new ObjectOutputStream(f);
+//                s.writeObject(resultBalanceMap);
+//                s.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
 //            }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
+
+
+//
+//
+//        File resultBalance = new File("resources", "balanceResult.dt");
+//        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(resultBalance))) {
+//
+//            bufferedWriter.write(resultBalanceMap);
+//
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
 //
-//        try (BufferedReader transactions = new BufferedReader(new FileReader(file2))) {
-//
-//            String transactionsNumber = transactions.readLine();
-//            String[] transactionsArray = transactionsNumber.split(" ");
-//
-//            for (int i = 0; i < transactionsArray.length; i++) {
-//                listTransactions.add(transactionsArray[1]);
-//                transactionsMap.put(transactionsArray[0], Integer.parseInt(transactionsArray[2]));
-//
-//            }
-//
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+
 
 
     }
 }
+
+
+

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JournalStorage {
-    private List <Subject> journalStorage = new ArrayList<>();
+
+
+    private List<Subject> journalStorage = new ArrayList<>();
     private String filePath;
 
     public String getFilePath() {
@@ -19,4 +21,7 @@ public class JournalStorage {
         return journalStorage;
     }
 
+    public void setJournalStorage() {
+        this.journalStorage = journalStorage;
+    }
 }

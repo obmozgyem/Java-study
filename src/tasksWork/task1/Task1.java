@@ -17,10 +17,9 @@ Sidorov 5 5 5
 
 //              Math Ivanov 5
 public class Task1 {
-    private static final String MENU_STRING = "\n1. Read from file\n2. Write to file\n3. Enter mark\nEnter end\n";
+    private static final String MENU_STRING = "\n1. Read from file\n2. Write to file\n3. Enter mark\n* Press enter if you want to end the program\n";
 
     public static void main(String[] args) {
-
         JournalStorageService journalStorageService = new JournalStorageService();
         JournalStorage journalStorage = new JournalStorage("resources/journal1");
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
@@ -34,9 +33,12 @@ public class Task1 {
 //                        System.out.println("1");
 //                        break;
                     case "2" -> System.out.println("2");
-                    case "3" -> System.out.println("3");
+
+ //                   case "3" -> journalStorageService.AddMarkPupil(journalStorage); // вывести консоль, введите предмет, ученика, оценку
+                    case "4" -> journalStorage.getJournalStorage().forEach(System.out::println);
                     default -> System.err.println("Try again");
                 }
+
                 System.out.println(MENU_STRING);
                 inputString = br.readLine();
 
@@ -48,5 +50,7 @@ public class Task1 {
             e.printStackTrace();
         }
         System.out.println("FINISH");
+
+
     }
 }
