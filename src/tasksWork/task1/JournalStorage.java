@@ -19,4 +19,5 @@ public class JournalStorage {
         return journalStorage;
     }
 
+
 }

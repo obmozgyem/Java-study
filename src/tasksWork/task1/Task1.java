@@ -34,9 +34,11 @@ public class Task1 {
 //                        System.out.println("1");
 //                        break;
                     case "2" -> System.out.println("2");
-                    case "3" -> System.out.println("3");
+                    case "3" -> System.out.println("3"); // вывести консоль, введите предмет, ученика, оценку
+                    case "4" -> journalStorage.getJournalStorage().forEach(System.out::println);
                     default -> System.err.println("Try again");
                 }
+
                 System.out.println(MENU_STRING);
                 inputString = br.readLine();
 

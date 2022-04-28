@@ -1,23 +1,48 @@
 package Archive;
 
-import java.util.Scanner;
+/*
+ИМХО задача не столько сложная, сколько многозадачная по сравнению с предыдущими.
+1. Прописываем массив на 5 ячеек.
+2. Прописываем сканер и ввод с консоли в массив (заполняем ячейки).
+3. Далее нужно найти самую длинную строку.
+Сортируем строки по длине. Два цикла: основной while с условием boolean, вложенный for (int i = 1; i < 5; i++). Во вложенном if с условием сравнения длин строк (strings.get(i).length() > strings.get(i - 1).length()).
+Далее, если условие выполняется, переносим значения длин в две переменные String и переназначаем ячейки (strings.set(i, tmp2);).
+4. Выводим ячейку 0 на экран (в любом случае длиннее её строк нет). И, в конце, еще один цикл - сравниваем длины оставшихся строк с длинной строки ячейки 0, в случае равенства выводим их на экран.
+Если вдумываться можно как-то проще, но такая задача не стоит.
+ */
+
+import java.util.*;
 
 class MyNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-
-        int test[] = new int[a];
-
-        for (int i = 0; i < a; i++) {
-
-            test[i] = sc.nextInt();
-
+        String[] word = sc.nextLine().split(" ");
+        List<String> list = Arrays.asList(word);
+        int m = list.get(0).length();
+        int i = 0;
+        for (String s : list) {
+            if (m < s.length()) {
+                m = s.length();
+                i++;
+            }
+            System.out.println(i);
+            }
 
         }
-        System.out.print(test[sc.nextInt()]);
+
+
     }
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

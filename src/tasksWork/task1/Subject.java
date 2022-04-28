@@ -17,4 +17,14 @@ public class Subject {
         return journal;
     }
 
+    public void setJournal(Map<Pupil, List<Integer>> journal) {
+        this.journal = journal;
+    }
+
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "title='" + title + '\''  + " " + journal.size()
+                ;
+    }
 }
