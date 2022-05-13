@@ -14,21 +14,16 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Task4 {
-    public static void main(String[] args) throws FileNotFoundException {
-                 /*                    //ReadTransactions2
-        Map<String, Integer> balanceMap = ReadBalance.readBalance(); // получил значение c которым можно работать
-        Map<String, Integer> resultBalanceMap = balanceMap;
-        System.out.println(balanceMap.toString());
-        System.out.println(resultBalanceMap.toString());  */
+    public static void main(String[] args) throws IOException {
 
         //ReadTransactions
         Map<String, Integer> balanceMap = ReadBalance.readBalance(); // получил значение c которым можно работать
 
         Map<String, Integer> resultBalanceMap = balanceMap;
-        System.out.println(resultBalanceMap.toString());
+
         List<List> readTransaction = ReadTransactions.readTransaction();  //keyMap(0)   //valueMoney(2)  //personWhoGetMoney(1)
         List<String> personWhoGetMoney = readTransaction.get(1);
-        System.out.println(personWhoGetMoney.toString());
+
 
         List<String> personWhoTakeHisMoney = readTransaction.get(0);
 
@@ -37,7 +32,6 @@ public class Task4 {
         for (String myInt : valueMoney) {
             valueMapInteger.add(Integer.valueOf(myInt));
         }
-
 
 
         for (int i = 0; i < personWhoGetMoney.size(); i++) {
@@ -64,47 +58,47 @@ public class Task4 {
 
 
 
+        File file = new File("resources", "balanceResult.dt");
+        BufferedWriter bf = null;
+        try {
+            bf = new BufferedWriter(new FileWriter(file));
+            FileWriter nFile = new FileWriter(file);
 
+            for (Map.Entry<String, Integer> entry :
+                    sortedMap.entrySet()) {
 
-        /*      Map<String, Integer> mapTransaction = new HashMap<>();   // если делать мапу транзакции, то перезаписываются она
-                                                                          надо во время чтения сделать
-        for (int i = 0; i < valueMapInteger.size(); i++) {
-            mapTransaction.put(keyMap.get(i), valueMapInteger.get(i) );
+                bf.write(entry.getKey() + " "
+                        + entry.getValue());
 
+                     bf.newLine();
+            }
+
+            bf.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        System.out.println(mapTransaction.size());
-     System.out.println(mapTransaction.toString()); */
 
 
 
 
+        //записьь в одну строчку
 //        try {
-//                File file = new File("resources", "balanceResult.dt");
-//                FileOutputStream f = new FileOutputStream(file);
-//                ObjectOutputStream s = new ObjectOutputStream(f);
-//                s.writeObject(resultBalanceMap);
-//                s.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-
-
+//            File file = new File("resources", "balanceResult.dt");
+//            FileWriter nFile = new FileWriter(file);
 //
+//            nFile.write(sortedMap.toString() + '\n');
 //
-//        File resultBalance = new File("resources", "balanceResult.dt");
-//        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(resultBalance))) {
-//
-//            bufferedWriter.write(resultBalanceMap);
-//
-//        } catch (IOException e) {
+//            nFile.close();
+//        } catch (NullPointerException e) {
 //            e.printStackTrace();
 //        }
-//
-
-
 
     }
 }
+
+
+
+
 
 
 
