@@ -35,20 +35,22 @@ public class JournalStorageService {
 
     }
 
-//    public void AddMarkPupil (JournalStorage journalStorage) throws IOException {
-//        //изменить на чтение из листа
-//       journalStorage.setJournalStorage();
-//       Subject subject = new Subject();
-//       subject.getJournal();
-//       List<Subject> listAdd = new ArrayList<>();
-//
-//
-//
-//        System.out.println(MENU_STRINGADDMARK);
-//       List<Subject> addMark= journalStorage.getJournalStorage();
-//       addMark.
-//
-//
+    public void AddMarkPupil (JournalStorage journalStorage) throws IOException {
+        //изменить на чтение из листа
+       journalStorage.setJournalStorage();
+       Subject subject = new Subject();
+       subject.getJournal();
+       List<Subject> listAdd = new ArrayList<>();
+
+
+
+
+
+        System.out.println(MENU_STRINGADDMARK);
+       List<Subject> addMark= journalStorage.getJournalStorage();
+
+
+
 //        try (BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in))) {
 //            String inputString = br2.readLine();
 //
@@ -65,5 +67,5 @@ public class JournalStorageService {
 //
 //            }
 //        }
- //   }
+    }
 }

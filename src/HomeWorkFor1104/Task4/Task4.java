@@ -21,6 +21,8 @@ public class Task4 {
 
         Map<String, Integer> resultBalanceMap = balanceMap;
 
+
+
         List<List> readTransaction = ReadTransactions.readTransaction();  //keyMap(0)   //valueMoney(2)  //personWhoGetMoney(1)
         List<String> personWhoGetMoney = readTransaction.get(1);
 
